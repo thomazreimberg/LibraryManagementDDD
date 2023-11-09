@@ -7,11 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac" Version="7.1.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GerenciamentoBiblioteca.Application\LibraryManagement.Application.csproj" />
     <ProjectReference Include="..\GerenciamentoBiblioteca.Data\LibraryManagement.Data.csproj" />
+    <ProjectReference Include="..\GerenciamentoBiblioteca.IOC\LibraryManagement.IOC.csproj" />
   </ItemGroup>
 
 </Project>
