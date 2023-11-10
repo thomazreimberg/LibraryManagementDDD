@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace LibraryManagement.Domain.Interfaces.Entities
+﻿namespace LibraryManagement.Domain.Interfaces.Entities
 {
     public interface IBook
     {

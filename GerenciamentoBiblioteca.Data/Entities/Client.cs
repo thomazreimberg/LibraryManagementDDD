@@ -1,9 +1,9 @@
 ﻿using LibraryManagement.Data.Entities.Base;
-using System.ComponentModel.DataAnnotations;
+using LibraryManagement.Domain.Interfaces.Entities;
 
 namespace GerenciamentoBiblioteca.Data.Entities
 {
-    public class Client : BaseTable<int>
+    public class Client : BaseTable<int>, IClient
     {
         public string? Name { get; set; }
         public string? Email { get; set; }

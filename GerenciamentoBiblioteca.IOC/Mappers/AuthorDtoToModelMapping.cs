@@ -9,23 +9,7 @@ namespace LibraryManagement.IOC.Mappers
     {
         public AuthorDtoToModelMapping() 
         {
-            // Add
-            CreateMap<AuthorDto, IAuthor>()
-                .ForMember(source => source.Name, opt => opt.MapFrom(dest => dest.Name));
-
-            // GetAll()
-            CreateMap<IAuthor, AuthorDtoGet>()
-                .ForMember(source => source.Id, opt => opt.MapFrom(dest => dest.Id))
-                .ForMember(source => source.Name, opt => opt.MapFrom(dest => dest.Name));
-
-            // GetById()
-            CreateMap<IAuthor, AuthorDtoGetById>()
-                .ForMember(source => source.Id, opt => opt.MapFrom(dest => dest.Id))
-                .ForMember(source => source.Name, opt => opt.MapFrom(dest => dest.Name));
-
-            CreateMap<IAuthor, Author>()
-                .ForMember(source => source.Id, opt => opt.MapFrom(dest => dest.Id))
-                .ForMember(source => source.Name, opt => opt.MapFrom(dest => dest.Name));
+            Map();
         }
 
         private void Map()

@@ -20,13 +20,8 @@ namespace LibraryManagement.Application
         public int Add(AuthorDto entity) =>
             _authorService.Add(_mapper.Map<IAuthor>(entity));
 
-        public List<AuthorDtoGet> GetAll()
-        {
-            var a = _authorService.GetAll().ToList();
-
-            return _mapper.Map<List<AuthorDtoGet>>(a);
-        }
-            
+        public List<AuthorDtoGet> GetAll() =>
+            _mapper.Map<List<AuthorDtoGet>>(_authorService.GetAll());
 
         public AuthorDtoGetById GetById(int id) =>
             _mapper.Map<AuthorDtoGetById>(_authorService.GetById(id));

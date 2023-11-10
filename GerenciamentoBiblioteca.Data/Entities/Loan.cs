@@ -1,10 +1,10 @@
 ﻿using LibraryManagement.Data.Entities.Base;
-using System.ComponentModel.DataAnnotations;
+using LibraryManagement.Domain.Interfaces.Entities;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GerenciamentoBiblioteca.Data.Entities
 {
-    public class Loan : BaseTable<int>
+    public class Loan : BaseTable<int>, ILoan
     {
         public DateTime LoanDate { get; set; }
         public DateTime DevolutionDate { get; set; }
@@ -12,10 +12,10 @@ namespace GerenciamentoBiblioteca.Data.Entities
 
         [ForeignKey("Book")]
         public int BookId { get; set; }
-        public Book? Book { get; set; }
+        public IBook? Book { get; set; }
 
         [ForeignKey("Client")]
         public int ClientId { get; set; }
-        public Client? Client { get; set; }
+        public IClient? Client { get; set; }
     }
 }
